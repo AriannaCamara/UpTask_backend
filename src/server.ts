@@ -10,16 +10,18 @@ import authRoutes from './routers/authRoutes'
 dotenv.config()
 connectDB()
 const app = express()
+
 app.use(cors(corsConfig))
 
-// loggin
+// Logging
 app.use(morgan('dev'))
-//Leer datos de formulario
+
+// Leer datos de formulario
 app.use(express.json())
+
 // Routes
 app.use('/api/auth', authRoutes)
 app.use('/api/projects', projectRoutes)
 
 export default app
-
 
